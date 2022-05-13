@@ -36,13 +36,14 @@ public class EjemploParse {
             JSONArray arr = jo.getJSONArray("posts");
                 for (int i = 0; i < arr.length(); i++) {
                 String post_id = arr.getJSONObject(i).getString("post_id");
-                System.out.println(post_id);
+                System.out.println("Post_ID: "+post_id);
                 JSONArray comment = arr.getJSONObject(i).getJSONArray("comments");
                 for (int j = 0;j<comment.length();j++){
-                    String com = comment.getJSONObject(j).getString("comment");
-                    System.out.println(com);
-                }
 
+                    String com = comment.getJSONObject(j).getString("comment");
+                    System.out.println("Comentario "+(j+1)+": " +com);
+                }
+                    System.out.println("\n");
             }
         }
 }
